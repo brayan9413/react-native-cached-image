@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 
-const RNFetchBlob = require('react-native-fetch-blob').default;
+const RNFetchBlob = require('rn-fetch-blob').default;
 
 const {
     fs
@@ -171,7 +171,7 @@ module.exports = {
     cleanDir(dirPath) {
         return fs.isDir(dirPath)
             .then(isDir => isDir && fs.unlink(dirPath))
-            .catch(() => {})
+            .catch(() => { })
             .then(() => ensurePath(dirPath));
     },
 
